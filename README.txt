@@ -13,4 +13,4 @@ TestNG 6.9.10.
 ChromeDriver 2.24.4;
 InternetExplorerDriver 2.53.1;
 OperaDriver 0.2.0;
-Safari extension.
+SafariDriverServer 2.48.0.
