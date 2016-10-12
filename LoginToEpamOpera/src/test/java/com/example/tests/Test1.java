@@ -2,6 +2,8 @@ package com.example.tests;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.opera.OperaDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
@@ -25,14 +27,22 @@ public class Test1 {
         try {
             driver.navigate().to(baseUrl);
             driver.findElement(By.cssSelector("li.dropdown.uui-profile-menu > a.dropdown-toggle")).click();
-            driver.findElement(By.id("Login")).clear();
-            driver.findElement(By.id("Login")).sendKeys("epam");
-            driver.findElement(By.id("Password")).clear();
-            driver.findElement(By.id("Password")).sendKeys("1234");
+            WebElement loginElement = driver.findElement(By.id("Login"));
+            loginElement.clear();
+            loginElement.sendKeys("epam");
+            WebElement passwordElement = driver.findElement(By.id("Password"));
+            passwordElement.clear();
+            passwordElement.sendKeys("1234");
             driver.findElement(By.xpath("//button[@type='submit']")).click();
 
             Assert.assertTrue((driver.findElement(By.cssSelector(".logout"))).isEnabled());
-            System.out.println("Login test done successful!");
+            System.out.println("Login test done successfuly!");
+
+            Alert alert = (new WebDriverWait(driver, 5)).until(ExpectedConditions.alertIsPresent());
+            String message = alert.getText();
+            System.out.println(message);
+            alert.dismiss();
+
         }
         catch (Exception o) {
             System.out.println("Test execution error! See stack-trace below:");
