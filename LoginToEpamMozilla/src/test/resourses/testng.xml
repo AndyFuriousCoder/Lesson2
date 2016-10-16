@@ -6,7 +6,7 @@
         <classes>
             <class name="com.example.tests.Test1" >
                 <methods>
-                    <include name = "test"/>
+                    <include name = "test1"/>
                 </methods>
             </class>
         </classes>
