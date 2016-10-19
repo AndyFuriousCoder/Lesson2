@@ -6,7 +6,7 @@
  добавлен вызов alert и его обработка
  использование DataProvider для тесторования входа под учётной записью
  использование нескольких lifecycles
-+ добавлены page objects для checkboxes, radiobutton, login
++ добавлены page objects для checkboxes, radiobutton, login для Firefox
 
 В программе использовались:
 Selenium IDE 2.53.1;
